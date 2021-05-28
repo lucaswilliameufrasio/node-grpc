@@ -23,7 +23,7 @@ function Find({ request: { id } }, callback) {
 }
 
 const server = new grpc.Server()
-server.addService(NotesDefinition.NoteService.service, { List, Find })
+server.addService(NotesDefinition.Notes.service, { List, Find })
 
 server.bind('0.0.0.0:50051', grpc.ServerCredentials.createInsecure())
 server.start()
